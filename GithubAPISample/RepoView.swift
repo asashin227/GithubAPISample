@@ -1,15 +1,14 @@
 //
-//  UserListView.swift
+//  RepoView.swift
 //  GithubAPISample
 //
-//  Created by Asakura Shinsuke on 2017/07/04.
+//  Created by Asakura Shinsuke on 2017/07/08.
 //  Copyright © 2017年 Asakura Shinsuke. All rights reserved.
 //
 
 import UIKit
 
-class UserListView: UIView {
-
+class RepoView: UIView {
     lazy var table: UITableView = self.createTableView()
     lazy var searchBar: UISearchBar = self.createSearchBar()
     

@@ -15,10 +15,12 @@ extension Session {
             let task = self.send(request) { result in
                 switch result {
                 case .success(let res):
+                    print(res)
                     observer.on(.next(res))
                     observer.on(.completed)
                 case .failure(let err):
-                    Log(err.localizedDescription)
+                    print(err.localizedDescription)
+                    print(err)
                     observer.onError(err)
                 }
             }

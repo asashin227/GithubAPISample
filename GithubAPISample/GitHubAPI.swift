@@ -7,6 +7,7 @@
 //
 
 import APIKit
+import Himotoki
 
 protocol GitHubAPI: Request {
     

@@ -6,25 +6,24 @@
 //  Copyright © 2017年 Asakura Shinsuke. All rights reserved.
 //
 
-import UIKit
+import APIKit
+import Himotoki
 
 struct RepositoryRequest: GitHubAPI {
     var userName: String
-    var repository: String
     var path: String {
-        return "/users/\(self.userName)/\(self.repository)"
+        return "/users/\(self.userName)/repos"
     }
-    typealias Response = [User]
+    typealias Response = [Repository]
     
     var method: HTTPMethod {
         return .get
     }
     
-    init(userName: String, repository: String) {
+    init(userName: String) {
         self.userName = userName
-        self.repository = repository
     }
-    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> FetchRepositoryRequest.Response {
+    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> RepositoryRequest.Response {
         return try decodeArray(object)
     }
 }
